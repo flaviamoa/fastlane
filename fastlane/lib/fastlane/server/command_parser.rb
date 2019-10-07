@@ -25,12 +25,9 @@ module Fastlane
       command_type = command_json['commandType'].to_sym
       command = command_json['command']
 
-      case command_type
-      when :action
-        return ActionCommand.new(json: command)
-      when :control
-        return ControlCommand.new(json: command)
-      end
+	  command_type.each do |c|
+		c.new_command(json: command)
+      return
     end
 
     def self.handle_old_style_action_command(command_json: nil)
