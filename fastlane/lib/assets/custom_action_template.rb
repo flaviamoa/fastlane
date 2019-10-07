@@ -22,9 +22,8 @@ module Fastlane
         "A short description with <= 80 characters of what this action does"
       end
 
-      def self.details
-        # Optional:
-        # this is your chance to provide a more detailed description of this action
+		#Remoção de comentário e melhoria de nome do método
+      def self.optional_details
         "You can use this action to do cool things..."
       end
 
@@ -65,16 +64,12 @@ module Fastlane
         ["Your GitHub/Twitter Name"]
       end
 
+		#Remoção de comentários que não adicionam utilidade ao código
       def self.is_supported?(platform)
         # you can do things like
-        # 
         #  true
-        # 
         #  platform == :ios
-        # 
         #  [:ios, :mac].include?(platform)
-        # 
-
         platform == :ios
       end
     end
